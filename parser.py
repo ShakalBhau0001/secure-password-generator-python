@@ -4,17 +4,12 @@ import string
 import sys
 from pathlib import Path
 
-# Password configuration
 MIN_LENGTH = 12
 MAX_LENGTH = 128
 DEFAULT_PASSWORD_LENGTH = 16
-
-# Passphrase configuration
 MIN_WORDS = 6
 MAX_WORDS = 20
 DEFAULT_WORDS = 6
-
-# Common special characters
 SPECIAL = "!@#$%^&*()-_=+"
 LOWERCASE = string.ascii_lowercase
 UPPERCASE = string.ascii_uppercase
@@ -125,14 +120,14 @@ def main():
             secret_value = generate_passphrase(args.words)
             print("\nGenerated Passphrase:")
             print(secret_value)
-    except FileNotFoundError as error:
-        print(f"\nError: {error}")
+    except FileNotFoundError as e:
+        print(f"\nError: {e}")
         sys.exit(1)
-    except ValueError as error:
-        print(f"\nError: {error}")
+    except ValueError as e:
+        print(f"\nError: {e}")
         sys.exit(1)
-    except OSError as error:
-        print(f"\nFile system error: {error}")
+    except OSError as e:
+        print(f"\nFile system error: {e}")
         sys.exit(1)
 
 
